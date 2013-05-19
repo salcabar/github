@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>南昌大学iot成员</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/jquery.jOrgChart.css"/>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+    
+    <!-- jQuery includes -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    
+    <script src="jquery.jOrgChart.js"></script>
+
+    <script>
+    jQuery(document).ready(function() {
+        $("#org").jOrgChart({
+            chartElement : '#chart',
+            dragAndDrop  : true
+        });
+    });
+    </script>
+  </head>
+
+  <body>
+    <h1 style="text-align:center"> 南昌大学物联网技术研究中心 </h1>
+    <ul id="org" style="display:none">
+    <li>
+       iot
+       <ul>
+         <li>软件组
+           <ul>
+             <li>Web组
+			   <ul>
+			     <li>Java
+					<ul>
+						<li>何周
+							<ul>
+								<li>陈宝珠</li>
+							</ul>
+						</li>
+						
+						<li>汤博
+							<ul>
+								<li>尹珊珊</li>
+							</ul>
+						</li>
+						<li>陈雪萍
+							<ul>
+								<li>杨璐辉</li>
+							</ul>
+						</li>
+					</ul>
+				 </li>
+			     <li>.net
+					<ul>
+						<li>陈琪</li>
+						<li>彭丽君</li>
+						<li>罗峥</li>
+					</ul>
+				 </li>
+			   </ul>
+			  </li>
+			 <li>Android组
+				<ul>
+					<li>宋建轩
+						<ul>
+							<li>梁家文</li>
+						</ul>
+					</li>
+					<li>陈雪萍
+						<ul>
+							<li>张小强</li>
+						</ul>
+					</li>
+					<li>朱先璐
+						<ul>
+							<li>柯挺立</li>
+						</ul>
+					</li>
+				</ul>
+			 </li>
+           </ul>
+         </li>
+         <li>硬件组
+           <ul>
+		     <li>电路组
+			    <ul>
+					<li>黄风峥</li>
+					<li>吴帅</li>
+				</ul>
+			 </li>
+	
+             <li>程序组
+				<ul>
+					<li>李梦杰
+						<ul>
+							<li>卢红阳
+								<ul>
+									<li>邱永洪
+								</ul>
+							</li>
+						</ul>
+					</li>	
+				    <li>唐龙
+						<ul>
+							<li>王凡
+								<ul>
+									<li>徐艳艳
+								</ul>
+							</li>
+						</ul>
+					</li>
+				    <li>章文文
+						<ul>
+							<li>赵晓娟
+								<ul>
+									<li>周笑笑
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			 </li>
+             <li>算法组
+				<ul>
+					<li>蔡权</li>
+					<li>胡宁</li>
+					<li>王钦安</li>
+					<li>杨香明</li>
+				</ul>
+			 </li>
+           </ul>
+         </li>
+       </ul>
+     </li>
+   </ul>            
+    
+    <div id="chart" class="orgChart"></div>
+    
+    <script>
+        jQuery(document).ready(function() {
+            
+            /* Custom jQuery for the example */
+            $("#show-list").click(function(e){
+                e.preventDefault();
+                
+                $('#list-html').toggle('fast', function(){
+                    if($(this).is(':visible')){
+                        $('#show-list').text('Hide underlying list.');
+                        $(".topbar").fadeTo('fast',0.9);
+                    }else{
+                        $('#show-list').text('Show underlying list.');
+                        $(".topbar").fadeTo('fast',1);                  
+                    }
+                });
+            });
+            
+            $('#list-html').text($('#org').html());
+            
+            $("#org").bind("DOMSubtreeModified", function() {
+                $('#list-html').text('');
+                
+                $('#list-html').text($('#org').html());
+                          
+            });
+        });
+    </script>
+
+</body>
+</html>
